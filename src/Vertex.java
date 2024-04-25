@@ -1,9 +1,5 @@
-public class Vertex {
-    private int _value;
+import java.util.ArrayList;
 
-    public Vertex(int value){
-        _value = value;
-    }
-    public int GetValue(){return _value;}
-    public void SetValue(int value) {_value = value;}
+public class Vertex {
+
 }
