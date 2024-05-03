@@ -1,7 +1,6 @@
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 
-public class Vertex {
+public class Vertex implements Comparable<Vertex> {
     private int _value;
     private ArrayList<Edge> _edges;
 
@@ -15,4 +14,9 @@ public class Vertex {
 
     public ArrayList<Edge> GetEdges(){return _edges;}
     public int GetValue(){return _value;}
+
+    @Override
+    public int compareTo(Vertex other) {
+        return Integer.compare(this.GetValue(), other.GetValue());
+    }
 }

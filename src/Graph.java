@@ -1,19 +1,24 @@
 import java.util.*;
 
 public class Graph {
+    private List<List<Vertex>> _adj;
     private ArrayList<Vertex> _vertices;
-    public Graph(){
+
+    public Graph() {
         _vertices = new ArrayList<>();
     }
-    public void addVertex(Vertex v){
+
+    public void addVertex(Vertex v) {
         _vertices.add(v);
     }
-    public void addEdge(Edge e){
+
+    public void addEdge(Edge e) {
         e.GetFirst().addEdge(e);
         e.GetSecond().addEdge(e);
     }
 
-    public void breadthFirstTraversal(Vertex start){
+    public void breadthFirstTraversal(Vertex start) {
+        System.out.println("Breitensuche \n");
         //Liste der besuchten Knoten
         ArrayList<Vertex> visited = new ArrayList<>();
         visited.add(start);
@@ -21,13 +26,13 @@ public class Graph {
         //Liste der zu besuchende Knoten in der Reihenfolge
         Queue<Vertex> visitQueue = new LinkedList<>();
         visitQueue.add(start);
-        while(!visitQueue.isEmpty()){
+        while (!visitQueue.isEmpty()) {
             //Knoten wird aus der Liste entfernt und der Wert des Knotens ausgegeben
             Object current = visitQueue.remove();
-            System.out.println(((Vertex)current).GetValue());
-            for(Edge e : ((Vertex)current).GetEdges()){
+            System.out.println(((Vertex) current).GetValue());
+            for (Edge e : ((Vertex) current).GetEdges()) {
                 Vertex neighbor = e.GetSecond();
-                if(!visited.contains(neighbor)){
+                if (!visited.contains(neighbor)) {
                     visited.add(neighbor);
                     visitQueue.add(neighbor);
                 }
@@ -35,20 +40,27 @@ public class Graph {
         }
     }
 
-    public void depthFirstTraversal(Vertex start, ArrayList<Vertex> visitedvertices){
+    public void depthFirstTraversal(Vertex start, ArrayList<Vertex> visitedvertices) {
+
         System.out.println(start.GetValue());
-        for(Edge e:start.GetEdges()){
+        for (Edge e : start.GetEdges()) {
             Vertex neighbor = e.GetSecond();
-            if(!visitedvertices.contains(neighbor)){
+            if (!visitedvertices.contains(neighbor)) {
                 visitedvertices.add(neighbor);
                 depthFirstTraversal(neighbor, visitedvertices);
             }
         }
+        System.out.println();
     }
-    public void initdFT(Vertex start){
+
+    public void dFT(Vertex start) {
         ArrayList<Vertex> visited = new ArrayList<>();
         depthFirstTraversal(start, visited);
     }
-    public void shortestPath(Vertex start, Vertex end){
+
+    public void shortestPath(Vertex start, Vertex end) {
+        System.out.println("Shortest Path | Dijkstra \n");
+
+
     }
 }

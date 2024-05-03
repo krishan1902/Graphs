@@ -1,8 +1,5 @@
-import java.util.ArrayList;
-
 public class Main {
     public static void main(String[] args) {
-
 
         System.out.println("Graphen in Java - Krishan");
         Graph g = new Graph();
@@ -51,13 +48,12 @@ public class Main {
         g.addEdge(e8);
         g.addEdge(e9);
 
+        //Travesals
+        //g.breadthFirstTraversal(v1);
+        System.out.println("Tiefensuche \n");
+        g.dFT(v1);
 
-
-        System.out.println("Breitensuche: ");
-        g.breadthFirstTraversal(v1);
-
-        System.out.println("\nTiefensuche: ");
-        g.initdFT(v1);
-
+        //Shortest Path with Dijkstra
+        g.shortestPath(v1, v4);
     }
 }
