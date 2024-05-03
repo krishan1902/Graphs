@@ -4,6 +4,7 @@ public class Main {
         System.out.println("Graphen in Java - Krishan");
         Graph g = new Graph();
 
+        //CREATE VERTICES
         Vertex v1 = new Vertex(1);
         Vertex v2 = new Vertex(2);
         Vertex v3 = new Vertex(3);
@@ -14,7 +15,7 @@ public class Main {
         Vertex v8 = new Vertex(8);
         Vertex v9 = new Vertex(9);
         Vertex v10 = new Vertex(10);
-
+        //CREATE EDGES
         Edge e1 = new Edge(v1,v2,1);
         Edge e2 = new Edge(v2,v3,1);
         Edge e3 = new Edge(v3,v4,1);
@@ -25,7 +26,7 @@ public class Main {
         Edge e8 = new Edge(v1,v9,1);
         Edge e9 = new Edge(v9,v10,1);
 
-
+        //ADD VERTICES
         g.addVertex(v1);
         g.addVertex(v2);
         g.addVertex(v3);
@@ -36,8 +37,7 @@ public class Main {
         g.addVertex(v8);
         g.addVertex(v9);
         g.addVertex(v10);
-
-
+        //ADD EDGES
         g.addEdge(e1);
         g.addEdge(e2);
         g.addEdge(e3);
@@ -48,7 +48,7 @@ public class Main {
         g.addEdge(e8);
         g.addEdge(e9);
 
-        //Travesals
+        //TRAVERSALS
         //g.breadthFirstTraversal(v1);
         System.out.println("Tiefensuche \n");
         g.dFT(v1);
